@@ -3,7 +3,6 @@ package advent
 import math._
 import scala.annotation.tailrec
 import scala.io.Source
-import scala.util.Using
 
 
 object Day1 {
@@ -19,6 +18,11 @@ object Day1 {
   }
 
   object SetContainsSolution extends Solution {
+    /** Find n pairs that sum to 2020
+     *
+     *  @param entries accountancy info
+     *  @param n number of pairs
+     */
     override def entryProduct2020(entries: Seq[Int], n: Int): Int = {
       val entriesSet = entries.toSet
       val init = entries.combinations(n - 1).find(c => entriesSet.contains(2020 - c.sum)).get
@@ -28,12 +32,11 @@ object Day1 {
 
   def parseEntries(input: String): Seq[Int] = input.linesIterator.map(_.toInt).toSeq
 
-  lazy val input: String = io.Source.fromInputStream(getClass.getResourceAsStream("day1.txt")).mkString.trim
+  lazy val input: String = Source.fromResource("day_01.txt").mkString.trim
 
   def main(args: Array[String]): Unit = {
     import SetContainsSolution._
 
     println(entryProduct2020(parseEntries(input), 2))
-    println(entryProduct2020(parseEntries(input), 3))
   }
 }
