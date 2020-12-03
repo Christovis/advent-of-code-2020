@@ -23,4 +23,7 @@ project/plugins/project/
 
 # other
 .sbt-hydra-history
+.travis.yml
 repository
+src/main/resources/
+project/

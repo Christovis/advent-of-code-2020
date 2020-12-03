@@ -1,7 +1,6 @@
 package advent
 
 import math._
-import scala.annotation.tailrec
 import scala.io.Source
 
 
