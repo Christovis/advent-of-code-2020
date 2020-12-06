@@ -35,7 +35,6 @@ object Day1 {
 
   def main(args: Array[String]): Unit = {
     import SetContainsSolution._
-
     println(entryProduct2020(parseEntries(input), 2))
   }
 }
